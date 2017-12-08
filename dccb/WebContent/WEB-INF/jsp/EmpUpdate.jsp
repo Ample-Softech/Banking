@@ -4,8 +4,10 @@
 <html lang="en">
 <!-- Head -->
 <head>
+<script type="text/javascript" src="js/location.js"></script>
 	<jsp:include page="/links.jsp"></jsp:include>
 	<title>Update Employee</title>
+<script type="text/javascript" src="js/location.js"></script>
 
 	<!-- scrolling script -->
 	<script type="text/javascript">
@@ -210,45 +212,37 @@
                 </div> 
               
                 
-                
-                
                   <div class="form-group">
                     <label for="country" class="col-sm-3 control-label">Country</label>
                     <div class="col-sm-9">
-                        <select id="country" name="Country" class="form-control" >
-                            <option>India</option>
-                            <option>Pakistan</option>
-                            <option>USA</option>
-                            <option>UK</option>
-                            <option>Canada</option>
-                            <option>Paris</option>
-                            <option>Bankok</option>
-                            <option>Brazil</option>
-                        </select>
+                        <select id="country2" name="country" class="form-control"> 						</select>
+                        
+                        
+<!--         				<select id="country" name="country" class="form-control"></select>
+ -->        				
+        				<script language="javascript">	
+        					populateCountries("country2", "state");
+        				</script>
                     </div>
                 </div>
                 
                  <div class="form-group">
                     <label for="State" class="col-sm-3 control-label">State</label>
                     <div class="col-sm-9">
-                        <select id="State" name="State" class="form-control"  >
-                            <option>Maharashtra</option>
-                            <option>Andra pradesh</option>
-                            <option>uttar pradesh</option>
-                            <option>Delhi</option>
-                            <option>Gujrat</option>
-                            <option>kerala</option>
-                            <option>Goa</option>
-                            <option>Tamilnadu</option>
-                        </select>
+                        <select id="state" name="state" class="form-control"></select>
+     
+						<script language="javascript">
+            				populateCountries("country", "state");
+        				</script>     	    
+     
                     </div>
                 </div> 
                 
                  <div class="form-group">
                     <label for="City" class="col-sm-3 control-label">City</label>
                     <div class="col-sm-9">
-                        <select id="City" name="City" class="form-control" >
-                            <option>Satara</option>
+                        <select id="City" name="City" class="form-control">
+                            <option value="satara">Satara</option>
                             <option>Pune</option>
                             <option>Mumbai</option>
                             <option>Amravti</option>
@@ -260,6 +254,7 @@
                     </div>
                 </div>
                 
+                    
                  <div class="form-group">
                     <label for="Pincode" class="col-sm-3 control-label">Pincode</label>
                     <div class="col-sm-9">

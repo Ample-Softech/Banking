@@ -2,11 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/javascript" src="js/location.js"></script>
 
 <!-- Head -->
 <head>
 <title>Add Employee</title>
-	
+<script type="text/javascript" src="js/location.js"></script>
 <jsp:include page="/links.jsp"></jsp:include>
 <!-- scrolling script -->
 <script type="text/javascript">
@@ -43,6 +44,8 @@
 <script type="text/javascript">
 
 </script>
+                        
+
 	<div class="top-main">
 		<div class="number">
 			<h3><i class="fa fa-phone" aria-hidden="true"></i> +91 08956562027</h3>
@@ -85,8 +88,7 @@
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Full Name</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Full Name" name="Name" class="form-control" autofocus>
-                       
+                        <input type="text" placeholder="Full Name" name="Name" class="form-control" pattern="^[a-zA-Z\s]+$" minlength="2" required autofocus>
                     </div>
                 </div>
                 <div class="form-group">
@@ -104,7 +106,7 @@
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
-                        <input type="email" id="email" placeholder="Email" name="Email" class="form-control">
+                        <input type="email" id="email" name="email" class="form-control" />
                     </div>
                 </div>
                 
@@ -136,6 +138,7 @@
                         <input type="date" id="birthDate" name="DOB" class="form-control">
                     </div>
                 </div>
+                
               <div class="form-group">
                     <label for="birthDate" class="col-sm-3 control-label">Date of Joining</label>
                     <div class="col-sm-9">
@@ -149,17 +152,17 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" name="Gender" value="Female">Female
+                                    <input type="radio" id="femaleRadio" name="Gender" value="Female" required="required">Female
+								</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+									<input type="radio" id="maleRadio" name="Gender" value="Male" required="required">Male
                                 </label>
                             </div>
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" name="Gender" value="Male">Male
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="uncknownRadio" name="Gender" value="Unknown">Unknown
+                                    <input type="radio" id="uncknownRadio" name="Gender" value="Unknown" required="required">Unknown
                                 </label>
                             </div>
                         </div>
@@ -178,37 +181,29 @@
                 </div> 
               
                 
-                
-                
                   <div class="form-group">
                     <label for="country" class="col-sm-3 control-label">Country</label>
                     <div class="col-sm-9">
-                        <select id="country" name="Country" class="form-control">
-                            <option>India</option>
-                            <option>Pakistan</option>
-                            <option>USA</option>
-                            <option>UK</option>
-                            <option>Canada</option>
-                            <option>Paris</option>
-                            <option>Bankok</option>
-                            <option>Brazil</option>
-                        </select>
+                        <select id="country2" name="country" class="form-control"> 						</select>
+                        
+                        
+<!--         				<select id="country" name="country" class="form-control"></select>
+ -->        				
+        				<script language="javascript">	
+        					populateCountries("country2", "state");
+        				</script>
                     </div>
                 </div>
                 
                  <div class="form-group">
                     <label for="State" class="col-sm-3 control-label">State</label>
                     <div class="col-sm-9">
-                        <select id="State" name="State" class="form-control">
-                            <option>Maharashtra</option>
-                            <option>Andra pradesh</option>
-                            <option>uttar pradesh</option>
-                            <option>Delhi</option>
-                            <option>Gujrat</option>
-                            <option>kerala</option>
-                            <option>Goa</option>
-                            <option>Tamilnadu</option>
-                        </select>
+                        <select id="state" name="state" class="form-control"></select>
+     
+						<script language="javascript">
+            				populateCountries("country", "state");
+        				</script>     	    
+     
                     </div>
                 </div> 
                 
@@ -216,7 +211,7 @@
                     <label for="City" class="col-sm-3 control-label">City</label>
                     <div class="col-sm-9">
                         <select id="City" name="City" class="form-control">
-                            <option>Satara</option>
+                            <option value="satara">Satara</option>
                             <option>Pune</option>
                             <option>Mumbai</option>
                             <option>Amravti</option>
@@ -247,8 +242,8 @@
 <!-- copyright -->
 <section class="copyright">
  <div class="agileits_copyright text-center">
-   <p>© 2017 CosMos Co-operative Bank. All rights reserved | Design by Amplesoftech</p>
- </div>
+   <p> © 2017 CosMos Co-operative Bank. All rights reserved | Design by Ample Softech </p>
+</div>
 </section>
 <!-- //copyright -->
 <!-- //footer -->
