@@ -79,26 +79,100 @@
 			<a href="admin"><!--<i class="fa fa-inr" aria-hidden="true"></i>--><span>Customer Acc Info</span></a>
 			</div>
 		<!-- //Top-Bar -->
-		<!-- <div class="container">
-            <form class="form-horizontal" role="form" action="/dccb/custsearch">
+		
+		
+		<div class="container">
+            <form class="form-horizontal" role="form" >
                 
                 <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">Account Number</label>
+                    <label for="CustomerId" class="col-sm-3 control-label">Customer Id</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Enter acc. no." name="AccNo" class="form-control" autofocus>
+                        <input type="text"  value="${CustAccInfo.custId }" class="form-control" autofocus>
                        
                     </div>
                 </div>
                 
-                
-                  <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-              	<button type="submit" class="btn btn-primary btn-block">Search</button>
-                          <a class="btn btn-primary" href="empsavee" role="button">Save</a>
+                <div class="form-group">
+                    <label for="AccountNumber" class="col-sm-3 control-label">Account Number</label>
+                    <div class="col-sm-9">
+                        <input type="text"  value="${CustAccInfo.accNo }" class="form-control" autofocus>
+                       
                     </div>
                 </div>
-            </form> /form
-        </div> ./container -->
+                
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.firstName }" class="form-control" autofocus>
+                       
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="LastName" class="col-sm-3 control-label">Last Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.lastName }" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Email" class="col-sm-3 control-label">Email-Id</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.email }" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ContactNo" class="col-sm-3 control-label">Contact Number</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.contactNo }" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Pancard" class="col-sm-3 control-label">Pancard</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.pancard}" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Address" class="col-sm-3 control-label">Address</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.address }" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Country" class="col-sm-3 control-label">Country</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.country}" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="State" class="col-sm-3 control-label">State</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.state}" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="City" class="col-sm-3 control-label">City</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.city}" class="form-control" autofocus>
+                       </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Pincode" class="col-sm-3 control-label">Pincode</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="${CustAccInfo.pincode}" class="form-control" autofocus>
+                       </div>
+                </div>
+               
+            </form> 
+        </div> 
 <!-- footer -->
 <%-- <jsp:include page="foot.jsp"></jsp:include> --%>
 <!-- copyright -->

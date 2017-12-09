@@ -10,6 +10,7 @@ import com.dao.Dao;
 import com.model.AdminLogin;
 import com.model.CustAccount;
 import com.model.CustomerAcccountDetails;
+import com.model.Designation;
 import com.model.EmpRegistration;
 import com.model.SuperAdmin;
 import com.model.TransactionView;
@@ -193,9 +194,13 @@ public class Controller {
 		
 		
 		@RequestMapping("/addemp")
-		public ModelAndView addemp() {
-			ModelAndView mav=new ModelAndView("AdminAddEmployee");
-				return mav;
+		public ModelAndView addemp(@ModelAttribute Designation desi) {
+			/*ModelAndView mav=new ModelAndView();
+			mav.setViewName("AdminAddEmployee");*/
+			List<Designation> list=dao.getdesilist();
+			System.out.println("List desi"+list);
+			/*mav.addObject("desiList",list);*/
+				return new ModelAndView("AdminAddEmployee","desiList",list);
 		}
 
 		
@@ -204,9 +209,16 @@ public class Controller {
 		public ModelAndView empsave(@ModelAttribute EmpRegistration er) {
 			System.out.println("Controller:-"+er.getName()+" "+er.getFatherName());
 			System.out.println("Save emp controller called...");
+			ModelAndView mav= new ModelAndView();
+			mav.setViewName("admin");
+			// designation list code here
+			
+			
+			
+			
 			dao.saveemp(er);
 			System.out.println("Employee saved successfully.....");
-				return new ModelAndView("admin");
+				return mav;
 		}
 		
 		
@@ -260,10 +272,13 @@ public class Controller {
 		
 		//Customer Search Code here..........
 				@RequestMapping("/custsearch")
-				public ModelAndView CustSearch(@ModelAttribute CustomerAcccountDetails c) {					
-					dao.getCustByAccNum(c);
-					System.out.println(c.getAccNo()+" "+c.getPancard());					
-					return new ModelAndView("CustAccInfo");
+				public ModelAndView CustSearch(@ModelAttribute("custSearch") CustomerAcccountDetails custSearch) {	
+					ModelAndView mv = new ModelAndView();
+					mv.setViewName("CustAccInfo");
+					custSearch = dao.getCustByAccNum(custSearch);
+					System.out.println(custSearch.getAccNo()+" "+custSearch.getPancard());	
+					mv.addObject("CustAccInfo", custSearch);
+					return mv;
 				}
 
 				
@@ -318,6 +333,24 @@ public class Controller {
 					mav.addObject("list",list);
 					mav.setViewName("ViewCustTransaction");	
 					return mav;
+				}
+				
+				
+				
+				@RequestMapping(value="/setup")
+				public ModelAndView setup()
+				{
+					return new ModelAndView("Designation");
+				}
+				
+				
+				@RequestMapping(value="/desiadd")
+				public ModelAndView desiadd(@ModelAttribute Designation desi)
+				{
+					System.out.println("desi controller called");
+					dao.savedesi(desi);
+					System.out.println("desi save");
+					return new ModelAndView("Designation","command","Added Successfully...");
 				}
 
 }

@@ -7,6 +7,7 @@ import com.control.HibernateUtilities;
 import com.model.AdminLogin;
 import com.model.CustAccount;
 import com.model.CustomerAcccountDetails;
+import com.model.Designation;
 import com.model.EmpRegistration;
 import com.model.SuperAdmin;
 import com.model.TransactionView;
@@ -153,12 +154,14 @@ public class Dao {
 			try {
 				session =sessionFactory.openSession();
 				session.beginTransaction();
-				String queryString = "from CUSTOMERACCCOUNTDETAILS where AccNo = :accno";
+				String queryString = "from CustomerAcccountDetails where accNo = :accno";
 				org.hibernate.Query query = this.session.createQuery(queryString);
-				query.setLong("accno", c.getAccNo());
+//				query.setLong("accno", c.getAccNo());
+				String no = String.valueOf(c.getAccNo());
+				query.setParameter("accno", no);
 				Object queryResult = query.uniqueResult();
-				session.getTransaction().commit();
-				session.close();				
+				//session.getTransaction().commit();
+				//session.close();				
 				return ((CustomerAcccountDetails)queryResult);
 			} catch (Exception e) {
 				System.out.println("catch Error: " + e.getMessage());
@@ -179,6 +182,38 @@ public class Dao {
 					session.beginTransaction();
 					list=session.createQuery("from TransactionView").list();
 					System.out.print(list.size() + " transactions...!");
+					session.close();
+					return list;
+					}
+				
+				
+				
+				
+				//designation code here.................
+				public void savedesi(Designation desi) {
+				
+					session=sessionFactory.openSession();
+					session.beginTransaction();
+					session.save(desi);
+					System.out.println("Dao called....");
+					session.getTransaction().commit();
+					session.close();
+				}
+				
+				
+				
+				
+				
+				
+				
+				@SuppressWarnings("unchecked")
+				public List<Designation> getdesilist()
+				{
+					session=sessionFactory.openSession();
+					List<Designation> list=null;
+					session.beginTransaction();
+					list=session.createQuery("from Designation").list();
+					System.out.print(list.size() + " designation...!");
 					session.close();
 					return list;
 					}

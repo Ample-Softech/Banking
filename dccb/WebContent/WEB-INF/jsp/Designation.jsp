@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <!-- Head -->
 <head>
-<title>Customer Search</title>
+<title>Admin</title>
 	
 <jsp:include page="/links.jsp"></jsp:include>
 <!-- scrolling script -->
@@ -17,33 +17,13 @@
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
-	</script>
-	    <style type="text/css">
-	
-/* 	body {
-    background-color: #eee;
-} */
- *[role="form"] {
-    max-width: 530px;
-    padding: 15px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 0.3em;
-		}
-
-*[role="form"] h2 {
-    margin-left: 5em;
-    margin-bottom: 1em;
-	} 
-    </style>
+</script>
 <!-- //scrolling script -->
 </head>
 <!-- //Head -->
 <!-- Body -->
 <body>
-<script type="text/javascript">
 
-</script>
 	<div class="top-main">
 		<div class="number">
 			<h3><i class="fa fa-phone" aria-hidden="true"></i> +91 08956562027</h3>
@@ -58,7 +38,7 @@
 			<li><a href="http://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 		</ul>
 		<div class="form-top">
-		  <form:form action="#" method="post" class="navbar-form navbar-left" >
+		  <form action="#" method="post" class="navbar-form navbar-left">
 			
 			
 			
@@ -68,7 +48,7 @@
 			</div> -->
 				<button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
 				<!-- <button type="submit" class="btn btn-default">Submit</button> -->
-			</form:form>
+			</form>
 		</div>
 			<div class="clearfix"></div>
 		</div>
@@ -77,38 +57,68 @@
 		<!-- Top-Bar -->
 		<jsp:include page="head.jsp"></jsp:include>
 				<div class="logo">
-			<a href="admin"><!--<i class="fa fa-inr" aria-hidden="true"></i>--><span>Customer search</span></a>
-			</div>
+			<a href="admin"><!--<i class="fa fa-inr" aria-hidden="true"></i>--><span>${command }</span></a>
+			
+		</div>
 		<!-- //Top-Bar -->
+		
+		
 		<div class="container">
-            <form:form class="form-horizontal" role="form" action="/dccb/custsearch" modelAttribute="custSearch">
+            <form class="form-horizontal" role="form" action="/dccb/desiadd" >
                 
                 <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">Account Number</label>
-                    <div class="col-sm-9">
-                        <input type="text" placeholder="Enter acc. no." name="accNo" class="form-control" autofocus>
+                    <label for="firstName" class="col-sm-3 control-label">Enter Designation</label>
+                    <div class="col-sm-3">
+                        <input type="text" placeholder="Enter designation" name="designation" class="form-control" autofocus>
                        
                     </div>
                 </div>
                 
                 
                   <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-              	<button type="submit" class="btn btn-primary btn-block">Search</button>
+                    <div class="col-sm-3 col-sm-offset-3">
+              	<button type="submit" class="btn btn-primary btn-block">Add</button>
                         <!--   <a class="btn btn-primary" href="empsavee" role="button">Save</a> -->
                     </div>
                 </div>
-            </form:form> <!-- /form -->
+            </form> <!-- /form -->
         </div> <!-- ./container -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				<br>
+		
 <!-- footer -->
-<%-- <jsp:include page="foot.jsp"></jsp:include> --%>
-<!-- copyright -->
-<section class="copyright">
- <div class="agileits_copyright text-center">
-   <p>© 2017 CosMos Co-operative Bank. All rights reserved | Design by Amplesoftech</p>
- </div>
-</section>
-<!-- //copyright -->
+<jsp:include page="foot.jsp"></jsp:include>
 <!-- //footer -->
 
 

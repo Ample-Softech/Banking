@@ -1,4 +1,5 @@
 package com.model;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,7 +10,8 @@ public class CustomerAcccountDetails {
 	@Id
 	private int CustId;
 	
-	private int AccNo; 
+	@Column(name = "ACCNO")
+	private String accNo; 
 	private int ContactNo; 
 	private int Pincode;
 	private String FirstName; 
@@ -26,11 +28,11 @@ public class CustomerAcccountDetails {
 	public void setCustId(int custId) {
 		CustId = custId;
 	}
-	public int getAccNo() {
-		return AccNo;
+	public String getAccNo() {
+		return accNo;
 	}
-	public void setAccNo(int accNo) {
-		AccNo = accNo;
+	public void setAccNo(String accNo) {
+		this.accNo = accNo;
 	}
 	public int getContactNo() {
 		return ContactNo;
@@ -92,11 +94,11 @@ public class CustomerAcccountDetails {
 	public void setPancard(String pancard) {
 		Pancard = pancard;
 	}
-		public CustomerAcccountDetails(int custId, int accNo, int contactNo, int pincode, String firstName, String lastName,
+		public CustomerAcccountDetails(int custId, String accNo, int contactNo, int pincode, String firstName, String lastName,
 			String email, String address, String city, String state, String country, String pancard) {
 		super();
 		CustId = custId;
-		AccNo = accNo;
+		this.accNo = accNo;
 		ContactNo = contactNo;
 		Pincode = pincode;
 		FirstName = firstName;

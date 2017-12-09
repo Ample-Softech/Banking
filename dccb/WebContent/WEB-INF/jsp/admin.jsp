@@ -68,6 +68,7 @@
 		  <li><a class="btn btn-primary" href="custcall" role="button">Cust Acc Information</a></li>
 		  <li><a class="btn btn-primary" href="viewcusttransaction" role="button">View Transaction</a></li>
 		  <li><a class="btn btn-primary" href="complaints" role="button">View Complaints</a></li>
+		   <li><a class="btn btn-primary" href="setup" role="button">Setup</a></li>
 		
 						<!-- <ul>
 								<li class="dropdown" >

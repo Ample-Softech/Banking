@@ -94,40 +94,53 @@
                 <div class="form-group">
                     <label for="FatherName" class="col-sm-3 control-label">Father Name</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="FatherName" name="FatherName" class="form-control" autofocus>
+                        <input type="text"  placeholder="FatherName" name="FatherName" class="form-control" pattern="^[a-zA-Z\s]+$" minlength="2" required>
                       </div>
                 </div>
                <div class="form-group">
                     <label for="PFAccountNumber" class="col-sm-3 control-label">PF Account Number</label>
                     <div class="col-sm-9">
-                        <input type="text" id="PFAccountNumber" placeholder="PFAccountNumber" name="PFAccNo" class="form-control" autofocus>
+                        <input type="text" id="PFAccountNumber" placeholder="PFAccountNumber" name="PFAccNo" class="form-control" pattern=^[1-9][0-9]{9}$ required>
                       </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
-                        <input type="email" id="email" name="email" class="form-control" />
+                        <input type="email" id="email" name="email" placeholder="EmailId" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
                     </div>
                 </div>
                 
-              <div class="form-group">
+              <!-- <div class="form-group">
                     <label for="Designation" class="col-sm-3 control-label">Designation</label>
                     <div class="col-sm-9">
-                        <input type="text" id="Designation" placeholder="Designation" name="Designation" class="form-control" autofocus>
+                        <input type="text" id="Designation" placeholder="Designation"  name="Designation" class="form-control" pattern="^[a-zA-Z\s]+$" minlength="1" required>
                       </div>
                 </div>
-                
+               -->
+               
+               <div class="form-group">
+                    <label for="Designation" class="col-sm-3 control-label">Designation</label>
+                    <div class="col-sm-9">
+                        <select id="Designation" name="Designation" class="form-control" required>
+                        			<c:forEach items="${desiList}" var="li">  
+      								<option value="${li.designation}">${li.designation}</option>  
+  									</c:forEach> 
+                        </select>
+                    </div>
+                </div> 
+               
+                 
                  <div class="form-group">
                     <label for="Experience" class="col-sm-3 control-label">Experience</label>
                     <div class="col-sm-9">
-                        <input type="text" id="Experience" placeholder="Experience" name="Experience" class="form-control" autofocus>
+                        <input type="text" id="Experience" placeholder="Experience" name="Experience" class="form-control" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,1}$" required>
                       </div>
                 </div>
                 
                   <div class="form-group">
                     <label for="MobileNumber" class="col-sm-3 control-label">Mobile Number</label>
                     <div class="col-sm-9">
-                        <input type="text" id="MobileNumber" placeholder="MobileNumber" name="MobileNumber" class="form-control" autofocus>
+                        <input type="text" id="MobileNumber" placeholder="MobileNumber" name="MobileNumber" class="form-control" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" required>
                       </div>
                 </div>
                 
@@ -135,14 +148,14 @@
                    <div class="form-group">
                     <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
                     <div class="col-sm-9">
-                        <input type="date" id="birthDate" name="DOB" class="form-control">
+                        <input type="date" id="birthDate" name="DOB" class="form-control" required="required">
                     </div>
                 </div>
                 
               <div class="form-group">
                     <label for="birthDate" class="col-sm-3 control-label">Date of Joining</label>
                     <div class="col-sm-9">
-                        <input type="date" id="birthDate" name="DateOfJoining" class="form-control">
+                        <input type="date" id="birthDate" name="DateOfJoining" class="form-control" required="required">
                     </div>
                 </div>
                 
@@ -173,10 +186,12 @@
                  <div class="form-group">
                     <label for="MarriedStatus" class="col-sm-3 control-label">Married Status</label>
                     <div class="col-sm-9">
-                        <select id="MarriedStatus" name="MarriedStatus" class="form-control">
+                        <select id="MarriedStatus" name="MarriedStatus" class="form-control" required>
+                        	<option value="">Select Married Status</option>
                             <option>Married</option>
                             <option>Unmarried</option>
-                            </select>
+                            <option>Other</option>
+                        </select>
                     </div>
                 </div> 
               
@@ -184,7 +199,7 @@
                   <div class="form-group">
                     <label for="country" class="col-sm-3 control-label">Country</label>
                     <div class="col-sm-9">
-                        <select id="country2" name="country" class="form-control"> 						</select>
+                        <select id="country2" name="country" class="form-control" required> 						</select>
                         
                         
 <!--         				<select id="country" name="country" class="form-control"></select>
@@ -198,7 +213,7 @@
                  <div class="form-group">
                     <label for="State" class="col-sm-3 control-label">State</label>
                     <div class="col-sm-9">
-                        <select id="state" name="state" class="form-control"></select>
+                        <select id="state" name="state" class="form-control" required></select>
      
 						<script language="javascript">
             				populateCountries("country", "state");
@@ -210,8 +225,9 @@
                  <div class="form-group">
                     <label for="City" class="col-sm-3 control-label">City</label>
                     <div class="col-sm-9">
-                        <select id="City" name="City" class="form-control">
-                            <option value="satara">Satara</option>
+                        <select id="City" name="City" class="form-control" required>
+                           <option value="">Select City</option>
+                            <option>Satara</option>
                             <option>Pune</option>
                             <option>Mumbai</option>
                             <option>Amravti</option>
@@ -226,7 +242,7 @@
                  <div class="form-group">
                     <label for="Pincode" class="col-sm-3 control-label">Pincode</label>
                     <div class="col-sm-9">
-                        <input type="text" id="Pincode" placeholder="Pincode" name="Pincode" class="form-control" autofocus>
+                        <input type="text" id="Pincode" placeholder="Pincode" name="Pincode" class="form-control" pattern=^[1-9][0-9]{5}$ required>
                       </div>
                 </div>
                 <div class="form-group">

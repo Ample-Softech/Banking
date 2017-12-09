@@ -12,6 +12,7 @@ import com.model.Branch_Scale;
 import com.model.Country;
 import com.model.CustAccount;
 import com.model.CustomerAcccountDetails;
+import com.model.Designation;
 import com.model.EmpRegistration;
 import com.model.State;
 import com.model.SuperAdmin;
@@ -34,6 +35,7 @@ public class HibernateUtilities {
 			configuration.addAnnotatedClass(EmpRegistration.class);
 			configuration.addAnnotatedClass(Country.class);
 			configuration.addAnnotatedClass(TransactionView.class);
+			configuration.addAnnotatedClass(Designation.class);
 			configuration.addAnnotatedClass(BBranch.class);
 			configuration.addAnnotatedClass(Branch_Scale.class);
 			configuration.addAnnotatedClass(State.class);

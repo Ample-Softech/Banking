@@ -232,7 +232,7 @@
                         <select id="state" name="state" class="form-control"></select>
      
 						<script language="javascript">
-            				populateCountries("country", "state");
+            				populateCountries("country2", "state");
         				</script>     	    
      
                     </div>
